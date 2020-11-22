@@ -1,0 +1,2 @@
+module ArchitectHelper
+end
