@@ -6,6 +6,8 @@ class CreateLandmarks < ActiveRecord::Migration[6.0]
       t.string :country 
       t.boolean :ancient 
       t.boolean :modern
+      t.integer :user_id
+      t.integer :review_id
       t.timestamps
     end
   end

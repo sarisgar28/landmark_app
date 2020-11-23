@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2020_11_23_171000) do
     t.string "country"
     t.boolean "ancient"
     t.boolean "modern"
+    t.integer "user_id"
+    t.integer "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string "review"
-    t.integer "user_id"
-    t.integer "landmark_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
