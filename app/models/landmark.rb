@@ -1,5 +1,5 @@
 class Landmark < ApplicationRecord
-    belongs_to :users 
-    belongs_to :city
-    
+    has_many :reviews 
+    has_many :users, through: :reviews
+
 end

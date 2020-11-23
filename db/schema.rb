@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_221350) do
+ActiveRecord::Schema.define(version: 2020_11_23_171000) do
 
-  create_table "cities", force: :cascade do |t|
-    t.string "city_name"
+  create_table "landmarks", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
     t.string "country"
     t.boolean "ancient"
     t.boolean "modern"
@@ -21,10 +22,10 @@ ActiveRecord::Schema.define(version: 2020_11_20_221350) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "landmarks", force: :cascade do |t|
-    t.string "name"
+  create_table "reviews", force: :cascade do |t|
+    t.string "review"
     t.integer "user_id"
-    t.integer "city_id"
+    t.integer "landmark_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
