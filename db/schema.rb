@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 2020_11_20_221350) do
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
     t.string "country"
+    t.boolean "ancient"
+    t.boolean "modern"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "landmarks", force: :cascade do |t|
-    t.string "location"
-    t.integer "year_built"
-    t.string "architect"
+    t.string "name"
     t.integer "user_id"
     t.integer "city_id"
     t.datetime "created_at", precision: 6, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_11_20_221350) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
