@@ -1,7 +1,8 @@
 <h1>Landmarks:<h1>
 
-<% Landmarks.each do |landmark|%>
+<% @landmarks.each do |landmark|%>
 <%= landmark.name%>
 <%= landmark.city%>
 <%= landmark.country%>
+<%= landmark.description%>
 <%end%>
