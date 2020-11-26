@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 #create 
 post "/landmarks/create", to: "landmarks#create", as: "landmarks_path"
 #index
-  get "/landmarks", to: "landmarks#index"
+  get "/landmarks", to: "landmark#index"
 
 #edit
 get "/landmarks/:id/edit", to: "landmarks#edit", as: "edit_landmark_path"
