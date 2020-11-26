@@ -27,7 +27,7 @@ class LandmarkController < ApplicationController
 
     def destroy 
         @landmark.destroy
-        redirect_to landmark_path 
+        redirect_to landmark_path
     end 
 
 private
