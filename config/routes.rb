@@ -19,5 +19,5 @@ patch "landmarks/:id", to: "landmarks#update"
 #destroy 
 delete "landmarks/:id", to: "landmarks#destroy", as: "destroy_landmark_path"
 
-  resources :landmarks
+resources :landmarks
 end
