@@ -22,6 +22,7 @@ delete "landmarks/:id", to: "landmarks#destroy", as: "destroy_landmark_path"
 
 resources :users, only: [:new, :create, :show]
 
+get '/signup', to: 'sessions#signup', as: 'signup'
 get '/login', to: 'sessions#login', as: 'login'
 post '/login', to: 'sessions#create'
 delete '/logout', to: 'sessions#logout', as: 'logout'

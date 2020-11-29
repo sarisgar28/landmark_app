@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
     
-    def sign_up 
+    def signup 
       @user = User.new(username: params[:username], password: params[:password])
       if @user.save 
           session[:user_id] = @user.id 
-        redirect_to user_path(@user)
+ 
+
       else 
         flash[:message] = "The username is taken, please try again"
-        redirect_to sign_up_path(@user)
+      
       end
     end 
   
