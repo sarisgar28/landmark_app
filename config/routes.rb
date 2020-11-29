@@ -19,5 +19,10 @@ patch "landmarks/:id", to: "landmarks#update"
 #destroy 
 delete "landmarks/:id", to: "landmarks#destroy", as: "destroy_landmark_path"
 
-resources :landmarks
+
+resources :users, only: [:new, :create, :show]
+
+get '/login', to: 'sessions#login', as: 'login'
+post '/login', to: 'sessions#create'
+delete '/logout', to: 'sessions#logout', as: 'logout'
 end
