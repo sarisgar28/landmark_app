@@ -1,4 +1,4 @@
-class LandmarkController < ApplicationController
+class LandmarksController < ApplicationController
     before_action :find_landmark, only: [:show, :edit, :update, :destroy]
 
     def index 
