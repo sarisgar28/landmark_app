@@ -15,4 +15,12 @@ class ReviewsController < ApplicationController
         end 
     end 
 
+    def index 
+        @reviews = @landmark.reviews 
+    end 
+
+    def show 
+        @review = @landmark.reviews.find_by(id: params[:id])
+    end 
+
 end
