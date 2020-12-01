@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+    before_action :find_landmark
     def new 
         @landmark = Landmark.new
         @review = Landmark.reviews.new 
@@ -32,5 +32,9 @@ class ReviewsController < ApplicationController
 
     def reviews_params 
      params.require(:review).permit(:review, :landmark_id)
+    end 
+
+    def find_landmark 
+     @landmark = Landmark.find_by(id: params[:landmark_id])
     end 
 end
