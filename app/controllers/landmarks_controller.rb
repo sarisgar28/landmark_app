@@ -14,7 +14,9 @@ class LandmarksController < ApplicationController
     def create
         @landmark = Landmark.new(landmark_params)
         if @landmark.save
-            redirect_to landmark_path(@landmark)
+            flash[:message] = "Review has been added for #{@landmark.review.name}"
+            redirect_to landmark_path(@landmark.review)
+       
         else 
             render :new 
         end 
