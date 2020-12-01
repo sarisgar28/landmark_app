@@ -7,7 +7,8 @@ class LandmarksController < ApplicationController
 
 
     def new 
-        @landmark = Landmark.new 
+        @landmark = Landmark.new
+        @review = Landmark.reviews.new 
     end 
 
 
