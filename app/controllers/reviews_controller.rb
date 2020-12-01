@@ -23,4 +23,9 @@ class ReviewsController < ApplicationController
         @review = @landmark.reviews.find_by(id: params[:id])
     end 
 
+    def search 
+        @reviews = Review.all 
+        render :index
+    end 
+
 end
