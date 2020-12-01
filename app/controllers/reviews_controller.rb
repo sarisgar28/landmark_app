@@ -28,4 +28,9 @@ class ReviewsController < ApplicationController
         render :index
     end 
 
+    private
+
+    def reviews_params 
+     params.require(:review).permit(:review, :landmark_id)
+    end 
 end
