@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
     
     def signup 
+      @user = User.new
       render :signup 
     end 
   
@@ -9,8 +10,8 @@ class SessionsController < ApplicationController
       end
     
       def create
-        @user = User.find_by(email: params[:username][:email])
-        if @user && @user.authenticate(params[:username][:password])
+        @user = User.find_by(email: params[:user][:email])
+        if @user && @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user)
         else

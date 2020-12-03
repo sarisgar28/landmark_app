@@ -1,8 +1,7 @@
-<title>Landmark:</title>
+<label>Landmark:</label>
 
 <h1><%=@landmark.name %></h1>
 <p><%=@landmark.city %><p>
 <p><%=@landmark.country %><p>
 <h3><%=@landmark.description%></h3>
 
-<%= button_to "Destroy Landmark", delete_landmark_path(@landmark), method: :delete %>

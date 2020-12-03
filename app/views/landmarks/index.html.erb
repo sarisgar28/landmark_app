@@ -1,8 +1,6 @@
-<h1>Landmarks:<h1>
+<h2><%= @current_user %>Landmarks:<h2>
 
-<%= @landmarks.each do |landmark|%>
-<%= landmark.name%>
-<%= landmark.city%>
-<%= landmark.country%>
-<%= landmark.description%>
+<% @landmarks.each do |landmark|%>
+<p><%= landmark.name%></p>
 <%end%>
+

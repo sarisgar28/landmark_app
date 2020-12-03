@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-    has_many :landmarks 
-    has_many :users, through: :landmarks
-
+  
+    belongs_to :user 
+    belongs_to :landmark
  
 end

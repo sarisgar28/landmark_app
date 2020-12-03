@@ -8,15 +8,14 @@ class LandmarksController < ApplicationController
 
     def new 
         @landmark = Landmark.new
-        @review = Landmark.reviews.new 
+        @review = @landmark.reviews.new 
     end 
 
 
     def create
         @landmark = Landmark.new(landmark_params)
         if @landmark.save
-            flash[:message] = "Review has been added for #{@landmark.review.name}"
-            redirect_to landmark_path(@landmark.review)
+            redirect_to landmarks_path(@landmark)
        
         else 
             render :new 
@@ -40,7 +39,7 @@ def find_landmark
 end 
 
 def landmark_params
-    params.require(:landmark).permit(:name, :city, :country, :description, :user_id, :review_id)
+    params.require(:landmark).permit(:name, :city, :country, :description)
 end 
 
 end

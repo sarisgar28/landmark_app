@@ -1,1 +1,3 @@
 <%= render "form", layout: "Edit your Landmark:"%>
+
+<%= button_to "Destroy Landmark", destroy_landmark_path(@landmark), method: :delete %>
