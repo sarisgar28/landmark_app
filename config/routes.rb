@@ -20,9 +20,9 @@ Rails.application.routes.draw do
 # delete "/landmarks/:id", to: "landmarks#destroy", as: "destroy_landmark"
 
 resources :users, only: [:new, :create, :show]
-
+resources :landmarks
 resources :landmarks do 
-  resources :reviews 
+  resources :reviews, only: [:new, :create]
 end 
 
 get '/signup', to: 'sessions#signup', as: 'signup'

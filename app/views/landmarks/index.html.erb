@@ -6,6 +6,7 @@
 <% @landmarks.each do |landmark|%>
 <p><%= link_to landmark.name, landmark_path(landmark)%></p>
 <%= button_to "Edit your Landmark", edit_landmark_path(landmark), method: :get %>
+
 <%end%>
 
 
