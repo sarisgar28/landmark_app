@@ -1,7 +1,12 @@
 <h2><%= @current_user %>Landmarks:<h2>
 
+
+
+
 <% @landmarks.each do |landmark|%>
 <p><%= link_to landmark.name, landmark_path(landmark)%></p>
 <%end%>
+
+
 
 
