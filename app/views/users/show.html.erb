@@ -2,6 +2,7 @@
 
 <%= button_to "Create landmark", new_landmark_path, method: :get %>
 
-<%= current_user.landmarks. each do |landmark| %>
+<% current_user.landmarks. each do |landmark| %>
     <%= landmark.name%>
 <%end%>
+
