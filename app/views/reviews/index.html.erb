@@ -1,6 +1,7 @@
+
+
 <h1><%= @landmark.name %> Reviews </h1>
 
-
-<% @reviews.each do |review|%>
-<p><%= link_to review, landmark_review_path(review.landmark)%></p>
+<% @reviews.landmark.each do |review|%>
+<%= link_to review, landmark_reviews_path(@landmark.review)%>
 <%end%>

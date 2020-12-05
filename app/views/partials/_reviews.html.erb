@@ -1,0 +1,15 @@
+
+
+
+<%= form_for @review, url: landmark_reviews_path do |f|%>
+
+    <label> Review: </label><br>
+    <%= f.text_area :review %><br> 
+
+    <%= f.submit "Create your Landmarks Review" %>
+
+<%end%>
+
+
+
+<%=button_to "Profile", user_path(current_user), method: :get %>

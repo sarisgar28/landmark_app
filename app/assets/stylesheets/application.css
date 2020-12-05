@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    font-family: 'Cinzel', serif;
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+    background-image: url("https://smhsoft.net/wp-content/uploads/2020/10/maxresdefault-1-1140x570.jpg");
+}
+
+
+    
