@@ -6,3 +6,5 @@
 <h3><%=@landmark.description%></h3>
 
 <%= button_to "create a review", new_landmark_review_path(@landmark), method: :get %>
+
+<%= button_to "Profile", user_path(current_user), method: :get %>

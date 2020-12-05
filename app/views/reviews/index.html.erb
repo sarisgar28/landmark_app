@@ -2,5 +2,5 @@
 
 
 <% @reviews.each do |review|%>
-<p><%= link_to review, landmark_reviews_path(review.landmark_id)%></p>
+<p><%= link_to review, landmark_review_path(review.landmark)%></p>
 <%end%>
