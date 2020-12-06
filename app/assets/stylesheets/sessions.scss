@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
     color: rgb(17, 27, 177);
-    
+    color-interpolation-filters: auto;
 }
 
+h1 {
+    margin-bottom: auto;
+}
+
+input[type=text] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }

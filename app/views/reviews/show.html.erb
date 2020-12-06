@@ -1,5 +1,5 @@
 <h1><%= @landmark.name %> Reviews </h1>
 
 <% @reviews.each do |review|%>
-    <%= link_to review, landmark_reviews_path(@landmark.review)%>
+<%= link_to review, landmark_reviews_path(@landmark.review)%>
 <%end%>
