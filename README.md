@@ -1,7 +1,7 @@
 # README
 Landmark Application
 
-This is an web application that creates a user, landmarks(the places you've been or would like to visit), as well as reviews such as comments talking about your experiences on this specific place, is like YELP for landmarks.
+This web application creates an user, landmarks(the places you've been or would like to visit), as well as reviews such as comments talking about your experiences on this specific place, is like YELP for landmarks.
 
 Motivation
 My motivation is traveling, I love cultures and  getting to know them, is one of the most important things to do in my life, I created this app not just because is my Flatiron School project but I really would like to know everyone else's experiences around the world and telling me about it.
