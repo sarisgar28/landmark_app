@@ -2,7 +2,8 @@ class LandmarksController < ApplicationController
     before_action :find_landmark, only: [:show, :edit, :update, :destroy]
 
     def index 
-        @landmarks = Landmark.all
+        @landmarks = current_user.landmarks 
+
     end 
 
 
@@ -14,8 +15,10 @@ class LandmarksController < ApplicationController
 
     def create
         @landmark = current_user.landmarks.build(landmark_params)
-        if @landmark.save
-            redirect_to landmarks_path(@landmark)
+        if @landmark.save 
+            @landmark.reviews.build(reviews_params)
+            @landmark.review.save
+        redirect_to landmarks_path(@landmark)
        
         else 
             render :new 
@@ -41,5 +44,9 @@ end
 def landmark_params
     params.require(:landmark).permit(:name, :city, :country, :description)
 end 
+
+def reviews_params 
+    params.require(:review).permit(:review, :landmark_id, :user_id)
+   end 
 
 end
