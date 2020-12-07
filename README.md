@@ -8,7 +8,7 @@ My motivation is traveling, I love cultures and  getting to know them, is one of
 
 This Web App is created with Ruby on Rails 6.0.3', '>= 6.0.3.4' 
 
-Code style
+Code style:
 I am being RESTful 
 
 

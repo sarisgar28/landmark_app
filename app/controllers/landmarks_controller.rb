@@ -13,7 +13,7 @@ class LandmarksController < ApplicationController
 
 
     def create
-        @landmark = Landmark.new(landmark_params)
+        @landmark = current_user.landmarks.build(landmark_params)
         if @landmark.save
             redirect_to landmarks_path(@landmark)
        

@@ -5,7 +5,7 @@
 <p><%= link_to landmark.name, landmark_path(landmark)%></p>
 <%end%>
 
-
+<%= button_to "Profile", user_path(current_user), method: :get %>
 
 
 

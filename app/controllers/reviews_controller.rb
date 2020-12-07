@@ -23,9 +23,9 @@ class ReviewsController < ApplicationController
         @review = @landmark.reviews.find_by(id: params[:id])
     end 
 
-    def search 
-        @reviews = Review.all 
-        render :index
+    def destroy
+        @review.destroy 
+        redirect_to landmark_reviews_path
     end 
 
     private
