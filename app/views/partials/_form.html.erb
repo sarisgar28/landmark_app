@@ -4,7 +4,7 @@
 
 <%= form_with url: landmarks_path  do |f|%>
  <%= f.fields_for @landmark do |l|%>
-
+    
     <label> Name:</label><br>
        <%= l.text_field  :name %><br>
 

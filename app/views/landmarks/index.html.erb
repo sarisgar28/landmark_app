@@ -1,9 +1,10 @@
 <h2><%= @current_user.username %> Landmarks:<h2>
 
-
-<% @landmarks.each do |landmark|%>
-<p><%= link_to landmark.name,  landmarks_path(@review.landmark)%></p>
+<ul class="landmarks">
+<% all_landmarks.each do |landmark|%>
+    <h4><%= link_to landmark.name, landmark_path(landmark)%></h4>
 <%end%>
+</ul>
 
 <%= button_to "Profile", user_path(current_user), method: :get %>
 
