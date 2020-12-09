@@ -2,7 +2,7 @@
 
 
 <% @landmarks.each do |landmark|%>
-<p><%= link_to landmark.name, landmark_path(landmark)%></p>
+<p><%= link_to landmark.name,  landmarks_path(@review.landmark)%></p>
 <%end%>
 
 <%= button_to "Profile", user_path(current_user), method: :get %>

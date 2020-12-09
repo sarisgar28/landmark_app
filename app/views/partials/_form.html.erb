@@ -20,7 +20,7 @@
     <%= f.fields_for @review do |r| %>
         
         <label> Review: </label><br>
-        <%= f.text_area :review %><br> 
+        <%= r.text_area :review %><br> 
     <%end%>
     <%= f.submit %>
 <%end%>

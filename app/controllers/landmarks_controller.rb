@@ -16,8 +16,9 @@ class LandmarksController < ApplicationController
     def create
         @landmark = current_user.landmarks.build(landmark_params)
         if @landmark.save 
-            @landmark.reviews.build(reviews_params)
-            @landmark.review.save
+            @review = @landmark.reviews.build(reviews_params)
+           @review.save
+           flash[:message] = "#{@landmark.name} successfully created"
         redirect_to landmarks_path(@landmark)
        
         else 
