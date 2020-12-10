@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
     before_action :find_landmark
     def new 
-        @landmark = Landmark.new
         @review = @landmark.reviews.new 
     end 
 
     def create
         @review = current_user.reviews.build(reviews_params)
+        @review.landmark = @landmark
         if @review.save
             flash[:message] = "Review has been added"
         redirect_to landmark_reviews_path(@review.landmark)

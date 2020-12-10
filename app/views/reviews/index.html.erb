@@ -3,7 +3,7 @@
 <h1><%= @landmark.name %> Reviews </h1>
 
 <% @reviews.each do |review|%>
-  <h2><%= link_to "Reviews: #{review.landmark.name}",  landmark_review_path(review.landmark)%><h2>
+  <h2><%= link_to "Reviews: #{review.landmark.name}",  landmark_review_path(review.landmark, review)%><h2>
 
 <%end%>
 

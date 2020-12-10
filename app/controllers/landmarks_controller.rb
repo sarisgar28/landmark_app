@@ -18,7 +18,7 @@ class LandmarksController < ApplicationController
         if @landmark.save 
             @review = @landmark.reviews.build(reviews_params)
            @review.save
-           flash[:message] = "#{@landmark.name} successfully created"
+        #    flash[:message] = "#{@landmark.name} successfully created"
         redirect_to landmarks_path(@landmark)
        
         else 
