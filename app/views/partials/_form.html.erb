@@ -3,6 +3,9 @@
 
 
 <%= form_with url: path, method: method  do |f|%>
+     
+   <%= render "partials/errors" %>
+
  <%= f.fields_for @landmark do |l|%>
     
     <label> Name:</label><br>
