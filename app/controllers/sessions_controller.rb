@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     
     def signup 
       @user = User.new
-      render :signup 
+      render :signup
     end 
   
     def login

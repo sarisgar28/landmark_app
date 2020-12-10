@@ -17,13 +17,13 @@
     <label> Description: </label><br>
     <%= l.text_area :description %><br> 
 <%end%>
-#     <% if @review %>
-#      <%=  f.fields_for @review do |r| %>
+    <% if @review %>
+     <%=  f.fields_for @review do |r| %>
         
-#         <label> Review: </label><br>
-#         <%= r.text_area :review %><br> 
-#      <%end%>
-#    <%end%>
+        <label> Review: </label><br>
+        <%= r.text_area :review %><br> 
+     <%end%>
+   <%end%>
     <%= f.submit %>
 <%end%>
 
