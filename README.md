@@ -1,5 +1,5 @@
-# README
-Landmark Application
+
+# Landmark Application
 
 This web application creates an user, landmarks(the places you've been or would like to visit), as well as reviews such as comments talking about your experiences on this specific place, is like YELP for landmarks.
 
