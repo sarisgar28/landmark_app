@@ -18,15 +18,18 @@
     font-family: 'Cinzel', serif;
     text-shadow: rgb(160, 175, 175);
     font-size: xx-large;
-    background-image: url("https://i.pinimg.com/564x/cb/5b/0d/cb5b0dc9337b5f06b22559eb5d209000.jpg");
+    /* background-image: url("https://i.pinimg.com/564x/cb/5b/0d/cb5b0dc9337b5f06b22559eb5d209000.jpg"); */
    
 }
 
 h1 {
-    
-    text-shadow: rgb(160, 175, 175);
+    color: rgb(7, 8, 8);
+   text-shadow: rgb(160, 175, 175);
 }
 
+h3 {
+    text-shadow: rgb(160, 175, 175);
+}
 label {
     color: rgb(7, 8, 8);
 }

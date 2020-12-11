@@ -1,5 +1,10 @@
+<h1><%= current_user.username%></h1>
+
 <h2><%= @landmark.name%></h2>
 
 <h2><%= @review.review%></h2>
 
+<%= button_to "Destroy Review", landmark_review_path(@landmark), method: :delete %>
+
 <%= button_to "Profile", user_path(current_user), method: :get %>
+

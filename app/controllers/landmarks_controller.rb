@@ -27,15 +27,15 @@ class LandmarksController < ApplicationController
         end 
     end 
 
-    def update 
-        @landmark.update(landmark_params)
-        redirect_to landmark_path(@landmark)
-    end 
+    # def update 
+    #     @landmark.update(landmark_params)
+    #     redirect_to landmark_path(@landmark)
+    # end 
 
-    def destroy 
-        @landmark.destroy
-        redirect_to landmarks_path
-    end 
+    # def destroy 
+    #     @landmark.destroy
+    #     redirect_to landmarks_path
+    # end 
 
 private
 

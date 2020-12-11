@@ -22,7 +22,10 @@ Rails.application.routes.draw do
 resources :users, only: [:new, :create, :show]
 resources :landmarks
 resources :landmarks do 
-  resources :reviews, only: [:new, :index, :show, :create]
+  resources :reviews, only: [:new, :index, :show, :create, :destroy]
+end 
+resources :users do 
+  resources :landmarks 
 end 
 
 get '/signup', to: 'sessions#signup', as: 'signup'

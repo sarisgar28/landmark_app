@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
     before_action :find_landmark
+    
+    
     def new 
-
         @review = @landmark.reviews.new 
     end 
 
@@ -24,9 +25,16 @@ class ReviewsController < ApplicationController
         @review = @landmark.reviews.find_by(id: params[:id])
     end 
 
+
     def destroy
-        @review.destroy 
-        redirect_to landmark_reviews_path
+        @review = Review.find_by(id: params[:review_id])
+        if @review.user == current_user
+           @review.destroy 
+           redirect_to landmark_reviews_path
+        else 
+            flash[:messages] =[@review.error.full_messages] 
+            redirect_to landmark_review_path(@review.landmark,@review)
+        end 
     end 
 
     private
