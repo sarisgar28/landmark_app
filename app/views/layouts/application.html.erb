@@ -10,6 +10,10 @@
   </head>
 
   <body
+  
+  <%= link_to "Signup", signup_path %>
+  <%= link_to "Login", login_path %>
+
   <div>
   <% flash[:messages]&.each do |message| %>
     <p class="flash-error"><%= message %></p>

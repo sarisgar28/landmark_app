@@ -2,7 +2,7 @@
 <h1><%= title %></h1>
 
 
-<%= form_with url: path, method: method  do |f|%>
+<%= form_with url: path, method: method, local: true  do |f|%>
      
    <%= render "partials/errors" %>
 

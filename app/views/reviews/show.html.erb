@@ -1,8 +1,8 @@
-<h1><%= current_user.username%></h1>
+<h1>Username: <%= @review.user.username%></h1>
 
-<h2><%= @landmark.name%></h2>
+<h2>Landmark Name: <%= @landmark.name%></h2>
 
-<h2><%= @review.review%></h2>
+<h2> Review: <%= @review.review%></h2>
 
 <%= button_to "Destroy Review", landmark_review_path(@landmark), method: :delete %>
 

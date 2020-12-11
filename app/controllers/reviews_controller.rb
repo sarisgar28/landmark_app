@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :find_landmark
-    
+    before_action :logged_in
     
     def new 
         @review = @landmark.reviews.new 
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
 
     def destroy
-        @review = Review.find_by(id: params[:review_id])
+        @review = Review.find_by(id: params[:id])
         if @review.user == current_user
            @review.destroy 
            redirect_to landmark_reviews_path
