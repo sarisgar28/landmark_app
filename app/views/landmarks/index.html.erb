@@ -1,12 +1,22 @@
-<h2><%= @current_user.username %> Landmarks:<h2>
+
+<h2>All Landmarks: </h2>
 
 <ul class="landmarks">
 <% all_landmarks.each do |landmark|%>
     <h4><%= link_to landmark.name, landmark_path(landmark)%></h4>
 <%end%>
 </ul>
+<br>
+<h2><%= @current_user.username %>'s Landmarks:<h2>
+<% @landmarks.each do |l|%>
+    <h4><%= link_to l.name, landmark_path(l)%></h4>
+<%end%> 
+
 
 <%= button_to "Profile", user_path(current_user), method: :get %>
+
+
+
 
 
 
