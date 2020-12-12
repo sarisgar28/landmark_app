@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-        @review = current_user.reviews.build(reviews_params)
+        @review = Review.create(reviews_params)
         @review.landmark = @landmark
         if @review.save
             flash[:messages] = ["Review has been added"]
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
            @review.destroy 
            redirect_to landmark_reviews_path
         else 
-            flash[:messages] =[@review.error.full_messages] 
+            flash[:messages] =@review.errors.full_messages
             redirect_to landmark_review_path(@review.landmark,@review)
         end 
     end 

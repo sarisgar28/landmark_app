@@ -3,7 +3,7 @@ class LandmarksController < ApplicationController
     before_action :logged_in
 
     def index 
-        @landmarks = current_user.landmarks 
+        @landmarks = current_user.landmarks.ordered_by_name 
 
     end 
 
@@ -21,10 +21,10 @@ class LandmarksController < ApplicationController
             @review.user = current_user
            @review.save
            flash[:messages] = ["#{@landmark.name} was successfully created"]
-        redirect_to landmarks_path(@landmark)
+        redirect_to landmark_path(@landmark)
        
         else 
-            # flash[:messages] = @landmark.errors.full_messages
+            flash[:messages] = @landmark.errors.full_messages
             render :new 
         end 
     end 

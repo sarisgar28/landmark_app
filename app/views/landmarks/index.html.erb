@@ -7,6 +7,7 @@
 <%end%>
 </ul>
 <br>
+ 
 <h2><%= @current_user.username %>'s Landmarks:<h2>
 <% @landmarks.each do |l|%>
     <h4><%= link_to l.name, landmark_path(l)%></h4>
