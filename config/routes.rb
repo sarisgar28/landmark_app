@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 resources :users, only: [:new, :create, :show]
 resources :landmarks
 resources :landmarks do 
-  resources :reviews, only: [:new, :index, :show, :create, :destroy]
+  resources :reviews, only: [:new, :index, :show, :create,  :edit, :update, :destroy]
 end 
 resources :users do 
   resources :landmarks 

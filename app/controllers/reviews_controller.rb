@@ -21,6 +21,24 @@ class ReviewsController < ApplicationController
         @reviews = @landmark.reviews 
     end 
 
+    def edit 
+        @review = Review.find(params[:id])
+        if @review.user != current_user
+            redirect_to landmark_review_path(@review.landmark,@review)
+        end
+    end 
+
+    def update
+        @review = Review.find_by(id: params[:id])
+        if @review.user == current_user
+            @review.update(reviews_params)
+         redirect_to landmark_review_path
+        else
+            flash[:messages] = ["Oops something went wrong!"]
+         redirect_to landmark_review_path(@review.landmark,@review)
+        end
+    end 
+
     def show 
         @review = @landmark.reviews.find_by(id: params[:id])
     end 
@@ -32,7 +50,7 @@ class ReviewsController < ApplicationController
            @review.destroy 
            redirect_to landmark_reviews_path
         else 
-            flash[:messages] =@review.errors.full_messages
+            flash[:messages] = @review.errors.full_messages
             redirect_to landmark_review_path(@review.landmark,@review)
         end 
     end 
@@ -40,7 +58,8 @@ class ReviewsController < ApplicationController
     private
 
     def reviews_params 
-     params.require(:review).permit(:review, :landmark_id, :user_id)
+        
+    params.require(:review).permit(:review, :landmark_id, :user_id)
     end 
 
     def find_landmark 
