@@ -1,10 +1,9 @@
 class LandmarksController < ApplicationController
-    before_action :find_landmark, only: [:show, :edit, :update, :search, :destroy]
+    before_action :find_landmark, only: [:show, :edit, :update, :search,:destroy]
     before_action :logged_in
 
     def index 
         @landmarks = current_user.landmarks.ordered_by_name 
-       
 
     end 
 
@@ -31,7 +30,8 @@ class LandmarksController < ApplicationController
     end 
 
     def search 
-        @landmark.find_by_name
+       all_landmarks.find_by_name
+      redirect_to landmark_path(@landmark)
     end 
     # def update 
     #     @landmark.update(landmark_params)
