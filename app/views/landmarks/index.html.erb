@@ -9,6 +9,7 @@
 <br>
  
 <h2><%= @current_user.username %>'s Landmarks:<h2>
+
 <% if @current_user && @landmarks.empty? %>
     <p> Your Landmark's list is empty!</p> 
 <%else%>
@@ -16,6 +17,11 @@
         <h4><%= link_to l.name, landmark_path(l)%></h4>
     <%end%> 
 <%end%>
+
+<%= form_tag(landmarks_path, method: :get) do %>
+     Find Landmark <%= text_field_tag :name  %>
+    <%= submit_tag 'Search' %>
+  <% end %>
 
 <%= button_to "Profile", user_path(current_user), method: :get %>
 
