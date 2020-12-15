@@ -11,3 +11,5 @@
 <% if @review.user == current_user %>
 <%= button_to "Edit Review", edit_landmark_review_path(@landmark,@review), method: :get %>
 <% end %>
+
+<%= button_to "Landmark's Reviews", landmark_reviews_path(@landmark), method: :get %>

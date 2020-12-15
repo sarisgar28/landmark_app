@@ -9,10 +9,13 @@
 <br>
  
 <h2><%= @current_user.username %>'s Landmarks:<h2>
-<% @landmarks.each do |l|%>
-    <h4><%= link_to l.name, landmark_path(l)%></h4>
-<%end%> 
-
+<% if @current_user && @landmarks.empty? %>
+    <p> Your Landmark's list is empty!</p> 
+<%else%>
+    <% @landmarks.each do |l|%>
+        <h4><%= link_to l.name, landmark_path(l)%></h4>
+    <%end%> 
+<%end%>
 
 <%= button_to "Profile", user_path(current_user), method: :get %>
 
