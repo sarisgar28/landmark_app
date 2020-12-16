@@ -9,5 +9,5 @@ class Landmark < ApplicationRecord
     validates :description, presence: true
    
     scope :ordered_by_name, -> { order(name: :asc)}
-    scope :find_by_name, -> (name) { find_by(name: :name)}
+    scope :search_by, ->(param, val){ where("#{param} LIKE ?", "%#{val}%")}
 end

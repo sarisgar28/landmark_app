@@ -1,4 +1,9 @@
 
+<%= form_with url: landmark_search_path, local: true do |form| %>
+    Find Landmark  <%= form.text_field :name %>
+    <%= form.submit "Search" %>
+  <% end %>
+
 <h2>All Landmarks: </h2>
 
 <ul class="landmarks">
@@ -7,21 +12,21 @@
 <%end%>
 </ul>
 <br>
+
+<br>
  
 <h2><%= @current_user.username %>'s Landmarks:<h2>
 
 <% if @current_user && @landmarks.empty? %>
     <p> Your Landmark's list is empty!</p> 
-<%else%>
+<% else %>
     <% @landmarks.each do |l|%>
         <h4><%= link_to l.name, landmark_path(l)%></h4>
     <%end%> 
 <%end%>
 
-<%= form_tag(landmarks_path, method: :get) do %>
-     Find Landmark <%= text_field_tag :name  %>
-    <%= submit_tag 'Search' %>
-  <% end %>
+
+
 
 <%= button_to "Profile", user_path(current_user), method: :get %>
 

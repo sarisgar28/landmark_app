@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
 resources :users, only: [:new, :create, :show]
 resources :landmarks
- post  "/landmarks/:id", to: "landmarks#search", as: "search"
+
+ post  "/landmarks/search", to: "landmarks#search", as: "landmark_search"
 resources :landmarks do 
   resources :reviews, only: [:new, :index, :show, :create,  :edit, :update, :destroy]
 end 

@@ -29,10 +29,11 @@ class LandmarksController < ApplicationController
         end 
     end 
 
-    def search 
-       all_landmarks.find_by_name
-      redirect_to landmark_path(@landmark)
-    end 
+    def search
+        @landmarks = Landmark.search_by("name", params[:name])
+        render :index
+      end
+
     # def update 
     #     @landmark.update(landmark_params)
     #     redirect_to landmark_path(@landmark)
