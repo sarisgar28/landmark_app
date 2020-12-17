@@ -32,7 +32,7 @@ class LandmarksController < ApplicationController
     def search
         @landmarks = Landmark.search_by("name", params[:name])
         render :index
-      end
+    end
 
     # def update 
     #     @landmark.update(landmark_params)
