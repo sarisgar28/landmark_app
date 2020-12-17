@@ -32,6 +32,7 @@ class ReviewsController < ApplicationController
         @review = Review.find_by(id: params[:id])
         if @review.user == current_user
             @review.update(reviews_params)
+            flash[:messages] = ["Review has been updated!"]
          redirect_to landmark_review_path
         else
             flash[:messages] = ["Oops something went wrong!"]

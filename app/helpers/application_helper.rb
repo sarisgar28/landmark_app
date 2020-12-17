@@ -10,4 +10,10 @@ module ApplicationHelper
       end 
     end
 
+    
+    def authenticate
+        if !logged_in?
+        redirect_to login_path 
+        end 
+     end 
 end
