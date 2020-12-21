@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 # #destroy 
 # delete "/landmarks/:id", to: "landmarks#destroy", as: "destroy_landmark"
 
+# longestname
+get "/landmarks/longestname", to: "landmarks#longestname", as: "longestname"
+
 resources :users, only: [:new, :create, :show]
 resources :landmarks
 

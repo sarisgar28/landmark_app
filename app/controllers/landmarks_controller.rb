@@ -1,5 +1,5 @@
 class LandmarksController < ApplicationController
-    before_action :find_landmark, only: [:show, :edit, :update, :search,:destroy]
+    before_action :find_landmark, only: [:show, :edit, :update,:destroy]
     before_action :logged_in
 
     def index 
@@ -11,6 +11,10 @@ class LandmarksController < ApplicationController
     def new 
         @landmark = Landmark.new
         @review = @landmark.reviews.new 
+    end 
+
+    def longestname
+        @landmarks = Landmark.longestname.last 
     end 
 
 
@@ -56,6 +60,6 @@ end
 
 def reviews_params 
     params.require(:review).permit(:review, :landmark_id, :user_id)
-   end 
+end 
 
 end

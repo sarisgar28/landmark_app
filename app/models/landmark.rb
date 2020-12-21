@@ -11,5 +11,6 @@ class Landmark < ApplicationRecord
    
     scope :ordered_by_name, -> { order(name: :asc)}
     scope :search_by, ->(param, val){ where("#{param} LIKE ?", "%#{val}%")}
+    scope :longestname, -> {order( "LENGTH(name)")}
 
 end
